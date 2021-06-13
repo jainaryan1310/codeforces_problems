@@ -95,34 +95,30 @@ inline ll inv(ll base,ll modulo=modd){
     return fast_expo(base,modulo-2LL,modulo);
 }
 
+bool checkPalindrome(string s){
+	string tmp = s;
+	for(ll i=0;i<s.size();i++){
+		tmp[i]=s[s.size()-i-1];
+	}
+	return s==tmp;
+}
 
-signed main(){
+
+int main(){
 	ll t;
-	ll n;
-	ll k;
-	ll i;
-	string s;
 	cin>>t;
+	ll n;
+	string s;
 	while(t>0){
 		t--;
 		cin>>n;
-		k = 0;
 		cin>>s;
-		while(n>0){
-			if(s[n-1]=='0'){
-				k++;
-			}
-			n--;
+		string tmp = s;
+		for(ll i=0;i<s.size();i++){
+			tmp[i]=s[s.size()-i-1];
 		}
-		if(k==1){
-			cout << "BOB" << endl;
-			continue;
-		}else if(k%2==0){
-			cout << "BOB" << endl;
-			continue;
-		}else{
-			cout << "ALICE" << endl;
-			continue;
+		while(tmp!=s){
+			
 		}
 	}
 }
